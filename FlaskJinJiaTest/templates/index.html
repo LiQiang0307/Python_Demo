@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+我是模板
+
+
+{#下面是一个变量代码块的使用#}
+{{ url_str }}<br>
+
+{{ my_list }}<br>
+{{ my_list[2] }}
+
+{{ my_dict["name"] }}<br>
+{{ my_dict.url }}
+
+<hr>
+{#控制代码块#}
+
+{#列表循环遍历#}
+{#for循环的使用，先写for，然后按tab键自动补全#}
+{% for i in my_list %}
+{#    数据大于3能显示，if判断#}
+    {% if i>3 %}
+         {{ i }}
+    {% endif %}
+
+{% endfor %}
+
+
+{#过滤器==>常看文档常见内置过滤器#}
+{#字符串变大写#}
+{{ my_dict.url |upper}}
+{#字符串反转#}
+{{ my_dict.name|reverse }}
+{#过滤器链式调用#}
+{{ my_dict.name |upper |reverse }}
+
+</body>
+</html>
